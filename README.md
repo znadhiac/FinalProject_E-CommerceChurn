@@ -1,2 +1,2 @@
-# FinalProject_E-CommerceChurn
-A machine learning–based churn prediction model for an e-commerce platform, using features from five key behavioral domains: demographics, engagement, transaction behavior, platform preference, and satisfaction &amp; complaints to identify high-risk customers and support targeted retention strategies.
+# E-COMMERCE CUSTOMER CHURN ANALYSIS AND PREDICTION
+This group final project presents a machine learning–based churn prediction model for an e-commerce platform, using features from five behavioral domains: demographics, engagement, transactions, platform preference, and satisfaction. Through data preprocessing, feature engineering, model tuning, and class imbalance handling, the project uncovers patterns behind customer disengagement and identifies high-risk customers. The resulting insights enable earlier churn detection, data-driven decisions, better retention planning, and more efficient marketing spend.
