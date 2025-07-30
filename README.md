@@ -52,6 +52,36 @@ During data preprocessing, the following steps were applied:
 ---
 
 ## III - MODELING AND EVALUATION
+This chapter covers building a classification model to predict e-commerce customer churn. It includes model benchmarking, handling class imbalance, hyperparameter tuning, and selecting the best model. The final model is explained, evaluated with key metrics, and analyzed for feature importance and business impact to ensure practical value.
+
+### **1. Benchmark Model**  
+Benchmarking compares ten classification algorithms under identical preprocessing and evaluation settings to establish baseline performance for predicting e-commerce customer churn. All models were integrated into a uniform pipeline with consistent scaling, encoding, and stratified sampling to ensure fair comparison based solely on model characteristics. Each was trained on the training set and evaluated on a fixed test set using churn-relevant classification metrics: **F2‑Score**, **Recall**, **PR‑AUC**, **F1‑Score**, **Precision**, **ROC‑AUC**, and **Accuracy**. The models range from linear (Logistic Regression), to non-parametric (K-Nearest Neighbors, Decision Tree), and ensemble methods (Bagging, Random Forest, AdaBoost, Gradient Boosting, XGBoost, LightGBM, CatBoost), balancing predictive power, interpretability, and robustness to class imbalance.
+
+### **2. Model Optimization and Selection**  
+
+- **Class Imbalance Handling:**  
+  SMOTE-ENN was applied during cross-validation to balance classes, significantly improving recall and F2-Score, especially for ensemble models like CatBoost and Gradient Boosting.
+
+- **Hyperparameter Tuning:**  
+  Randomized search enhanced performance primarily in tree-based models, while simpler models saw moderate gains and Bagging remained largely stable.
+
+- **Best Model Selection:**  
+  CatBoost delivered top validation and test metrics, demonstrating robustness and readiness for deployment in churn prediction.
+
+
+### **3. Model Diagnostics and Interpretation**  
+
+- **Feature Importance & Model Explainability**  
+  SHAP analysis revealed key churn drivers: low tenure, complaint history, low satisfaction, inactivity, fewer devices/addresses, lower-tier city, and single status. These insights enhance model transparency and help target specific customer segments like silent churners.
+
+- **Model Generalization & Overfitting Analysis**  
+  The CatBoost model demonstrated strong generalization on test data with high recall (94.9%), F2-Score (~0.90), and ROC-AUC (0.98), indicating no overfitting and robust predictive performance suitable for deployment.
+
+- **Confusion Matrix & Error Segmentation**  
+  False negatives were 6.4% of churners, mainly active and satisfied customers representing passive churn, suggesting a gap in detecting subtle disengagement. False positives remained manageable, supporting efficient intervention strategies.
+
+- **Threshold Adjustment & Risk Trade-off**  
+  Optimal classification threshold was confirmed at 0.5, balancing recall and precision to maximize churn detection while controlling false alarms. This threshold supports cost-effective retention campaigns with strong ROI by capturing ~95% of churners with limited unnecessary actions.
 
 ---
 
@@ -60,6 +90,15 @@ During data preprocessing, the following steps were applied:
 ---
 
 ## REFERENCES
+
+- **Fader, P. S., & Hardie, B. G. S. (2013).** *RFM and CLV: Using customer lifetime value for marketing strategies*. *Journal of Marketing Analytics, 1(3–4), 105–119.*  
+- **Koehrsen, W., et al. (2020).** *Comparison of the CatBoost Classifier with Other Machine Learning Methods*. *International Journal of Advanced Computer Science and Applications, 11(11).*  
+  [https://doi.org/10.14569/IJACSA.2020.0111190](https://doi.org/10.14569/IJACSA.2020.0111190)  
+- **Kumar, V., & Reinartz, W. (2016).** *Customer Relationship Management: Concept, Strategy, and Tools* (3rd ed.). Springer.  
+- **Verbraken, T., Verhoef, P. C., & de Ruyter, K. (2014).** *A Novel Profit Maximizing Metric for Measuring Classification Performance of Customer Churn Prediction Models*.  
+  [https://www.researchgate.net/publication/261296259_A_Novel_Profit-Maximizing_Metric_for_Measuring_Classification_Performance_of_Customer_Churn_Prediction_Models](https://www.researchgate.net/publication/261296259_A_Novel_Profit-Maximizing_Metric_for_Measuring_Classification_Performance_of_Customer_Churn_Prediction_Models)  
+- **Verma, A. (2023).** *E-commerce Customer Churn Analysis and Prediction* [Data set]. Kaggle.  
+  [https://www.kaggle.com/datasets/ankitverma2010/ecommerce-customer-churn-analysis-and-prediction](https://www.kaggle.com/datasets/ankitverma2010/ecommerce-customer-churn-analysis-and-prediction)  
 
 ---
 
