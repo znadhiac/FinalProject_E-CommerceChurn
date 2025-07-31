@@ -21,7 +21,7 @@ The company faces rising customer inactivity, threatening revenue and marketing 
 Develop a supervised machine learning classifier using customer demographics, behavior, and transactions. Prioritize minimizing false negatives (missed churners) with metrics like F2-score, Recall, and PR-AUC. Deliver interpretable, actionable outputs to support retention efforts.
 
 ### **Scope and Limitations**  
-Scope includes modeling churn from structured historical data, analyzing key churn drivers, and providing retention insights. Limitations involve missing external factors, unclear churn definitions and timing, assumptions on feature units, class imbalance (~16.8% churn), and a predictive—not explanatory—model. Despite these, the model offers a solid foundation for churn risk assessment and retention strategy support.
+Scope includes modeling churn from structured historical data, analyzing key churn drivers, and providing retention insights. Limitations involve missing external factors, unclear churn definitions and timing, assumptions on feature units, class imbalance, and a predictive—not explanatory—model. Despite these, the model offers a solid foundation for churn risk assessment and retention strategy support.
 
 ---
 
@@ -66,8 +66,7 @@ Benchmarking compares ten classification algorithms under identical preprocessin
   Randomized search enhanced performance primarily in tree-based models, while simpler models saw moderate gains and Bagging remained largely stable.
 
 - **Best Model Selection:**  
-  CatBoost delivered top validation and test metrics, demonstrating robustness and readiness for deployment in churn prediction.
-
+  CatBoost delivered top validation and test performance, achieving the **highest F2-score**, which was the prioritized metric for this project to emphasize capturing high-risk churn customers. This indicates strong robustness and readiness for deployment in churn prediction.
 
 ### **3. Model Diagnostics and Interpretation**  
 
@@ -75,7 +74,7 @@ Benchmarking compares ten classification algorithms under identical preprocessin
   SHAP analysis revealed key churn drivers: low tenure, complaint history, low satisfaction, inactivity, fewer devices/addresses, lower-tier city, and single status. These insights enhance model transparency and help target specific customer segments like silent churners.
 
 - **Model Generalization & Overfitting Analysis**  
-  The CatBoost model demonstrated strong generalization on test data with high recall (94.9%), F2-Score (~0.90), and ROC-AUC (0.98), indicating no overfitting and robust predictive performance suitable for deployment.
+  The CatBoost model demonstrated strong generalization on test data with high recall (94.9%) and F2-Score (~0.90), and ROC-AUC (0.98), indicating no overfitting and robust predictive performance suitable for deployment.
 
 - **Confusion Matrix & Error Segmentation**  
   False negatives were 6.4% of churners, mainly active and satisfied customers representing passive churn, suggesting a gap in detecting subtle disengagement. False positives remained manageable, supporting efficient intervention strategies.
@@ -178,7 +177,7 @@ The project provides actionable insights to reduce churn and optimize retention 
 ## PROJECT DEMO
 
 **Streamlit App:** [E-Commerce Churn Prediction App](https://ecommercechurnapp-groupalpha.streamlit.app/)  
-Input customer attributes to predict churn probability in real time.
+Input customer attributes to predict churn probability.
 
 **Tableau Dashboard:** [E-Commerce Dashboard Analysis](https://public.tableau.com/app/profile/aldino.putra/viz/E-CommerceChurnAnalysis_17536276743170/MainDashboard?showOnboarding=true)  
 Interactive data exploration and churn pattern visualization.
