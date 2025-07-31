@@ -197,3 +197,10 @@ Interactive data exploration and churn pattern visualization.
 - **Tableau:** Data exploration, dashboarding, and visual analytics.  
 - **Streamlit:** Web app framework for deploying interactive machine learning models.
 
+---  
+
+## CONTRIBUTORS  
+**Group Alpha – JCDSOL-018, Purwadhika**  
+- Zulfi Nadhia Cahyani (https://github.com/znadhiac)  
+- Liswatun Naimah (https://github.com/Liswatunnaimah)  
+- Aldino Dian Mandala Putra (https://github.com/aldino9112)  
