@@ -183,7 +183,7 @@ Input customer attributes to predict churn probability in real time.
 **Tableau Dashboard:** [E-Commerce Dashboard Analysis](https://public.tableau.com/app/profile/aldino.putra/viz/E-CommerceChurnAnalysis_17536276743170/MainDashboard?showOnboarding=true)  
 Interactive data exploration and churn pattern visualization.
 
-![E-Commerce Churn Dashboard](images/tableau_dashboard.png)
+![Churn Dashboard](tableau_dashboard.png)
 
 ---
 
